@@ -25,6 +25,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
   bool isNode2Open = false;
   bool isNode3Open = false;
   bool isNode4Open = false;
+  bool isWaterPumpOpen = false;
 
   void _getDevices() async {
     var res = await _bluetooth.getBondedDevices();
@@ -55,6 +56,8 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
         return 4;
       case 4:
         return 5;
+      case 5:
+        return 6;
       default:
         return 0;
     }
@@ -109,8 +112,19 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
         });
         return "off";
       }
+    } else if (nodeNumber == 5) {
+      if (isWaterPumpOpen == false) {
+        setState(() {
+          isWaterPumpOpen = true;
+        });
+        return "on";
+      } else {
+        setState(() {
+          isWaterPumpOpen = false;
+        });
+        return "off";
+      }
     }
-
     // Default return statement in case none of the conditions are met
     throw ArgumentError('Invalid node number: $nodeNumber');
   }
@@ -286,6 +300,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                       command = "Manual,${_getArdPin(1)},${_getCommand(1)},";
                     });
                     _sendData(command!);
+                    print(command);
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
@@ -303,6 +318,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                       command = "Manual,${_getArdPin(2)},${_getCommand(2)},";
                     });
                     _sendData(command!);
+                    print(command);
                   },
                   style: ButtonStyle(
                     backgroundColor:
@@ -326,6 +342,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                       command = "Manual,${_getArdPin(3)},${_getCommand(3)},";
                     });
                     _sendData(command!);
+                    print(command);
                   },
                   style: ButtonStyle(
                     backgroundColor:
@@ -343,6 +360,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                       command = "Manual,${_getArdPin(4)},${_getCommand(4)},";
                     });
                     _sendData(command!);
+                    print(command);
                   },
                   style: ButtonStyle(
                     backgroundColor:
@@ -362,9 +380,10 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    command = "Manual,${_getArdPin(2)},${_getCommand(2)},";
+                    command = "Manual,${_getArdPin(5)},${_getCommand(5)},";
                   });
                   _sendData(command!);
+                  print(command);
                 },
                 style: ButtonStyle(
                   backgroundColor:

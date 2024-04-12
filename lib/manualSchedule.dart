@@ -4,14 +4,12 @@ import 'nodeDropdown.dart';
 
 class ManualScheduler extends StatefulWidget {
   const ManualScheduler({super.key});
-  
 
   @override
   State<ManualScheduler> createState() => _ManualSchedulerState();
 }
 
 class _ManualSchedulerState extends State<ManualScheduler> {
-
   TimeOfDay selectedTime = TimeOfDay.now();
   bool isNotify = false;
 
@@ -19,26 +17,28 @@ class _ManualSchedulerState extends State<ManualScheduler> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue, 
+        backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
         title: Text(
           "Manual Scheduler",
           style: TextStyle(
-          fontFamily: "Rokkitt", 
+            fontFamily: "Rokkitt",
           ),
         ),
       ),
-
       body: Center(
-        child:  Padding(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "${selectedTime.hour < 10 ? '0${selectedTime.hour}' : selectedTime.hour} : ${selectedTime.minute < 10 ? '0${selectedTime.minute}' : selectedTime.minute}",
-                style: TextStyle(fontFamily: "Rokkitt", fontWeight: FontWeight.bold, fontSize: 100.0),
+                "${selectedTime.hourOfPeriod < 10 ? '0${selectedTime.hourOfPeriod}' : selectedTime.hourOfPeriod} : ${selectedTime.minute < 10 ? '0${selectedTime.minute}' : selectedTime.minute} ${selectedTime.period == "DayPeriod.am" ? 'AM' : 'PM'}",
+                style: TextStyle(
+                    fontFamily: "Rokkitt",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 80.0),
               ),
               ElevatedButton(
                 child: const Text(
@@ -48,21 +48,43 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                   ),
                 ),
                 onPressed: () async {
-                  final TimeOfDay? timeOfDay =  await showTimePicker(
-                    context: context, 
+                  final TimeOfDay? timeOfDay = await showTimePicker(
+                    context: context,
                     initialTime: selectedTime,
-                    initialEntryMode: TimePickerEntryMode.dial
+                    initialEntryMode: TimePickerEntryMode.dial,
                   );
-                  if(timeOfDay != null) {
+                  if (timeOfDay != null) {
                     setState(() {
-                      selectedTime = timeOfDay;
+                      selectedTime =
+                          timeOfDay.replacing(hour: timeOfDay.hourOfPeriod);
                     });
                   }
-                }, 
+                },
               ),
               Divider(),
               DayPicker(),
               nodeSelector(),
+              Container(
+                margin: EdgeInsets.only(top: 15),
+                alignment: Alignment.centerLeft,
+                child: const Text(
+                  "Measurement",
+                  style: TextStyle(
+                    fontFamily: "Rokkitt",
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Water Amount per Plant (mL)",
+                  ),
+                ),
+              ),
               Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: Row(
@@ -73,8 +95,9 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                       scale: 0.8, // Adjust the scale to make the switch smaller
                       child: Switch.adaptive(
                         value: isNotify,
-                        activeColor: Colors.blue, // Set the active color to blue
-                        onChanged: (value){
+                        activeColor:
+                            Colors.blue, // Set the active color to blue
+                        onChanged: (value) {
                           setState(() {
                             isNotify = value;
                           });
@@ -84,7 +107,6 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                   ],
                 ),
               ),
-
               Container(
                 margin: EdgeInsets.only(top: 20.0), // Add margin to the top
                 child: Column(
@@ -102,11 +124,12 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                               'Cancel',
                               style: TextStyle(
                                 color: Colors.blue,
-                              ),                
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 10), // Add some space between the buttons
+                        SizedBox(
+                            width: 10), // Add some space between the buttons
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
@@ -116,7 +139,7 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                               'Save',
                               style: TextStyle(
                                 color: Colors.blue,
-                              ),                      
+                              ),
                             ),
                           ),
                         ),
