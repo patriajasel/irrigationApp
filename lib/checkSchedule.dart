@@ -9,7 +9,7 @@ class ViewSchedule extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue, 
         foregroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "View Schedules",
           style: TextStyle(
           fontFamily: "Rokkitt", 
@@ -20,7 +20,7 @@ class ViewSchedule extends StatelessWidget {
       body: ListView.builder(
   itemCount: 5, // Number of cards
   itemBuilder: (BuildContext context, int index) {
-    return Card(
+    return const Card(
       margin: EdgeInsets.all(8.0),
       child: Padding(
         padding: EdgeInsets.all(16.0),

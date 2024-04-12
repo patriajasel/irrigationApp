@@ -14,7 +14,7 @@ class MyDashboard extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white, // Background color for the AppBar
-        title: Center(
+        title: const Center(
           // Center the text within the AppBar
           child: Text(
             'Smart Irrigation App',
@@ -30,10 +30,10 @@ class MyDashboard extends StatelessWidget {
             tooltip: 'Connect to a Device',
           ),
         ],
-        leading: Text(""),
+        leading: const Text(""),
       ),
       body: Container(
-        child: SingleChildScrollView(
+        child: const SingleChildScrollView(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -53,14 +53,14 @@ class MyDashboard extends StatelessWidget {
           Navigator.pushNamed(context, '/soilIdentify');
         },
         tooltip: 'Irrigate',
-        child: Icon(Icons.water_drop, color: Colors.blue),
         elevation: 0,
-        shape: CircleBorder(
+        shape: const CircleBorder(
           side: BorderSide(
               color: Colors.blue, width: 3.0, style: BorderStyle.solid),
         ),
+        child: const Icon(Icons.water_drop, color: Colors.blue),
       ),
-      bottomNavigationBar: bottomNavBar(),
+      bottomNavigationBar: const bottomNavBar(),
     );
   }
 }

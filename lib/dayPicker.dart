@@ -8,7 +8,7 @@ class DayPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final List<DayInWeek> _days = [
+    final List<DayInWeek> days = [
     DayInWeek("Mon", dayKey: "monday"),
     DayInWeek("Tue", dayKey: "tuesday"),
     DayInWeek("Wed", dayKey: "wednesday"),
@@ -23,7 +23,7 @@ class DayPicker extends StatelessWidget {
       child: SelectWeekDays(
         fontSize: 12,
         fontWeight: FontWeight.w500,
-        days: _days,
+        days: days,
         border: true,
         boxDecoration: BoxDecoration(
           color: Colors.blue,

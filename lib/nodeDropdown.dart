@@ -10,7 +10,7 @@ class nodeSelector extends StatefulWidget {
 class _nodeSelectorState extends State<nodeSelector> {
   String? _selectedItem;
 
-  List<String> _items = [
+  final List<String> _items = [
     'Node 1: Tomato',
     'Node 2: Eggplant',
     'Node 3: Pepper',
@@ -21,13 +21,13 @@ class _nodeSelectorState extends State<nodeSelector> {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
-          margin: EdgeInsets.only(top: 20.0),
+          margin: const EdgeInsets.only(top: 20.0),
           child: DropdownButton<String>(
-            icon: Icon(Icons.arrow_drop_down), // Arrow icon on the right
+            icon: const Icon(Icons.arrow_drop_down), // Arrow icon on the right
             iconSize: 20.0,
             isExpanded: true, // Set width to maximum
-            hint: Padding(
-              padding: const EdgeInsets.all(8.0), // Adding padding to the hint
+            hint: const Padding(
+              padding: EdgeInsets.all(8.0), // Adding padding to the hint
               child: Text('Select a Node', style: TextStyle(fontSize: 14.0)), // Reduced font size
             ),
             value: _selectedItem,
@@ -41,7 +41,7 @@ class _nodeSelectorState extends State<nodeSelector> {
                 value: value,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0), // Adding padding to the text
-                  child: Text(value, style: TextStyle(fontSize: 14.0)), // Reduced font size
+                  child: Text(value, style: const TextStyle(fontSize: 14.0)), // Reduced font size
                 ),
               );
             }).toList(),

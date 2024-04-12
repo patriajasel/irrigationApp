@@ -9,8 +9,8 @@ class appBar extends StatelessWidget {
       automaticallyImplyLeading: false,
       backgroundColor: Colors.blue, 
       foregroundColor: Colors.white,// Background color for the AppBar
-      title: Padding(
-        padding: const EdgeInsets.only(top: 20.0),
+      title: const Padding(
+        padding: EdgeInsets.only(top: 20.0),
         child: Center( // Center the text within the AppBar
           child: Text(
             'Smart Irrigation System',

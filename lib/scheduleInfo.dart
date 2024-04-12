@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class schedInformation extends StatefulWidget {
   const schedInformation({super.key});
@@ -15,7 +14,7 @@ class schedInformationState extends State<schedInformation> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Crop Information",
           style: TextStyle(
             fontFamily: "Rokkitt",
@@ -45,76 +44,76 @@ class schedInformationState extends State<schedInformation> {
                           color: Colors.black.withOpacity(0.5),
                           spreadRadius: 2,
                           blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                       radius: 60, // Adjust according to your preference
                       backgroundImage: AssetImage(
                           "assets/photos/Tomato.jpg"), // Your image URL
                     ),
                   ),
-                  SizedBox(height: 8), // Add space between the photo and text
-                  Text(
+                  const SizedBox(height: 8), // Add space between the photo and text
+                  const Text(
                     'Tomato', // Add your text here
                     style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Rokkitt"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                       height: 5), // Add space between the text and DataTable
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
                     child: Divider(),
                   ),
                   Container(
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       color: Colors.blue,
                       width: double.infinity,
-                      child: Text("Crop Description: ",
+                      child: const Text("Crop Description: ",
                           style: TextStyle(
                               fontFamily: "Rokkitt",
                               fontWeight: FontWeight.bold,
                               fontSize: 20.0,
                               color: Colors.white))),
-                  Padding(
-                    padding: const EdgeInsets.only(
+                  const Padding(
+                    padding: EdgeInsets.only(
                         top: 10.0, left: 20.0, right: 20.0, bottom: 20.0),
                     child: Text(
                       "Tomatoes are warm-season plants that require full sun and well-drained soil to thrive. They are commonly grown for their delicious fruits that can be eaten fresh or used in various culinary dishes.",
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
                     child: Divider(),
                   ),
                   Container(
                       color: Colors.blue,
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       alignment: Alignment.centerLeft,
-                      child: Text("Crop Schedule:",
+                      child: const Text("Crop Schedule:",
                           style: TextStyle(
                               fontFamily: "Rokkitt",
                               fontWeight: FontWeight.bold,
                               fontSize: 20.0,
                               color: Colors.white))),
-                  ExpansionTile(title: Text("Month #1"), children: [
+                  ExpansionTile(title: const Text("Month #1"), children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          columns: [
+                          columns: const [
                             DataColumn(label: Text('Action')),
                             DataColumn(label: Text('Water per Plant')),
                             DataColumn(label: Text('Fertilizer')),
                           ],
-                          rows: [
+                          rows: const [
                             DataRow(cells: [
                               DataCell(Text('Week 1: Seedlings')),
                               DataCell(Text('50-100 (mL)')),
@@ -141,18 +140,18 @@ class schedInformationState extends State<schedInformation> {
                       ),
                     ),
                   ]),
-                  ExpansionTile(title: Text("Month #2"), children: [
+                  ExpansionTile(title: const Text("Month #2"), children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          columns: [
+                          columns: const [
                             DataColumn(label: Text('Action')),
                             DataColumn(label: Text('Water per Plant')),
                             DataColumn(label: Text('Fertilizer')),
                           ],
-                          rows: [
+                          rows: const [
                             DataRow(cells: [
                               DataCell(Text('Week 1: Vegetative Growth')),
                               DataCell(Text('200-250 (mL)')),
@@ -181,18 +180,18 @@ class schedInformationState extends State<schedInformation> {
                       ),
                     ),
                   ]),
-                  ExpansionTile(title: Text("Month #3"), children: [
+                  ExpansionTile(title: const Text("Month #3"), children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          columns: [
+                          columns: const [
                             DataColumn(label: Text('Action')),
                             DataColumn(label: Text('Water per Plant')),
                             DataColumn(label: Text('Fertilizer')),
                           ],
-                          rows: [
+                          rows: const [
                             DataRow(cells: [
                               DataCell(Text('Week 1: Pre-flowering')),
                               DataCell(Text('350-400 (mL)')),
@@ -221,18 +220,18 @@ class schedInformationState extends State<schedInformation> {
                       ),
                     ),
                   ]),
-                  ExpansionTile(title: Text("Harvest"), children: [
+                  ExpansionTile(title: const Text("Harvest"), children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          columns: [
+                          columns: const [
                             DataColumn(label: Text('Action')),
                             DataColumn(label: Text('Water per Plant')),
                             DataColumn(label: Text('Fertilizer')),
                           ],
-                          rows: [
+                          rows: const [
                             DataRow(cells: [
                               DataCell(Text('Ripe fruit harvest')),
                               DataCell(Text('400-450 (mL)')),
@@ -253,14 +252,14 @@ class schedInformationState extends State<schedInformation> {
             left: 0,
             right: 0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                 onPressed: () {
                   // Add your functionality here
                   Navigator.pushNamed(context, '/applySched');
                   print('Apply Schedule button pressed');
                 },
-                child: Text(
+                child: const Text(
                   'Apply Schedule',
                   style: TextStyle(fontFamily: "Rokkitt", color: Colors.blue),
                 ),

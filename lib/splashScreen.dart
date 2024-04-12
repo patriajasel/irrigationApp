@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
           ),
           Padding(
               padding: const EdgeInsets.only(top: 15.0),
-              child: Text(
+              child: const Text(
                 "Smart Irrigation App",
                 style: TextStyle(
                   fontFamily: "PatuaOne",

@@ -183,8 +183,8 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
               child: bluetoothConfig(),
             ),
             devicesInfo(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Divider(),
             ),
             Expanded(child: devicesList()),
@@ -251,7 +251,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                     ListTile(
                       title: Text(
                         device.name ?? device.address,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontFamily: "Rokkitt", fontWeight: FontWeight.bold),
                       ),
                       trailing: ElevatedButton(
@@ -282,7 +282,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Manual Controls',
               style: TextStyle(
                 fontSize: 18.0,
@@ -290,7 +290,7 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                 color: Colors.white, // Text color set to white
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -308,9 +308,9 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                     foregroundColor: MaterialStateProperty.all<Color>(
                         Colors.cyan), // Button text color
                     side: MaterialStateProperty.all<BorderSide>(
-                        BorderSide(color: Colors.cyan)), // Border color
+                        const BorderSide(color: Colors.cyan)), // Border color
                   ),
-                  child: Text('Open Node #1'),
+                  child: const Text('Open Node #1'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -326,13 +326,13 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.cyan),
                     side: MaterialStateProperty.all<BorderSide>(
-                        BorderSide(color: Colors.cyan)),
+                        const BorderSide(color: Colors.cyan)),
                   ),
-                  child: Text('Open Node #2'),
+                  child: const Text('Open Node #2'),
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -350,9 +350,9 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.cyan),
                     side: MaterialStateProperty.all<BorderSide>(
-                        BorderSide(color: Colors.cyan)),
+                        const BorderSide(color: Colors.cyan)),
                   ),
-                  child: Text('Open Node #3'),
+                  child: const Text('Open Node #3'),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -368,13 +368,13 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.cyan),
                     side: MaterialStateProperty.all<BorderSide>(
-                        BorderSide(color: Colors.cyan)),
+                        const BorderSide(color: Colors.cyan)),
                   ),
-                  child: Text('Open Node #4'),
+                  child: const Text('Open Node #4'),
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -391,9 +391,9 @@ class _bluetoothConnectionState extends State<bluetoothConnection> {
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.cyan),
                   side: MaterialStateProperty.all<BorderSide>(
-                      BorderSide(color: Colors.cyan)),
+                      const BorderSide(color: Colors.cyan)),
                 ),
-                child: Text('Open Water Pump'),
+                child: const Text('Open Water Pump'),
               ),
             ),
           ],

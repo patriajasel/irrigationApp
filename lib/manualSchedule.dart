@@ -19,7 +19,7 @@ class _ManualSchedulerState extends State<ManualScheduler> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Manual Scheduler",
           style: TextStyle(
             fontFamily: "Rokkitt",
@@ -35,7 +35,7 @@ class _ManualSchedulerState extends State<ManualScheduler> {
             children: <Widget>[
               Text(
                 "${selectedTime.hourOfPeriod < 10 ? '0${selectedTime.hourOfPeriod}' : selectedTime.hourOfPeriod} : ${selectedTime.minute < 10 ? '0${selectedTime.minute}' : selectedTime.minute} ${selectedTime.period == "DayPeriod.am" ? 'AM' : 'PM'}",
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: "Rokkitt",
                     fontWeight: FontWeight.bold,
                     fontSize: 80.0),
@@ -61,11 +61,11 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                   }
                 },
               ),
-              Divider(),
-              DayPicker(),
-              nodeSelector(),
+              const Divider(),
+              const DayPicker(),
+              const nodeSelector(),
               Container(
-                margin: EdgeInsets.only(top: 15),
+                margin: const EdgeInsets.only(top: 15),
                 alignment: Alignment.centerLeft,
                 child: const Text(
                   "Measurement",
@@ -77,8 +77,8 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 10),
-                child: TextField(
+                margin: const EdgeInsets.only(top: 10),
+                child: const TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: "Water Amount per Plant (mL)",
@@ -86,11 +86,11 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20.0),
+                margin: const EdgeInsets.only(top: 20.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Notify me"),
+                    const Text("Notify me"),
                     Transform.scale(
                       scale: 0.8, // Adjust the scale to make the switch smaller
                       child: Switch.adaptive(
@@ -108,7 +108,7 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 20.0), // Add margin to the top
+                margin: const EdgeInsets.only(top: 20.0), // Add margin to the top
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -120,7 +120,7 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                             onPressed: () {
                               // Add your save functionality here
                             },
-                            child: Text(
+                            child: const Text(
                               'Cancel',
                               style: TextStyle(
                                 color: Colors.blue,
@@ -128,14 +128,14 @@ class _ManualSchedulerState extends State<ManualScheduler> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                             width: 10), // Add some space between the buttons
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
                               // Add your cancel functionality here
                             },
-                            child: Text(
+                            child: const Text(
                               'Save',
                               style: TextStyle(
                                 color: Colors.blue,

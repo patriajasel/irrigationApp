@@ -34,7 +34,7 @@ class _loadingScreenState extends State<loadingScreen> with SingleTickerProvider
               Center(
                 child: Lottie.asset("assets/animations/water_loading.json", height: 250, width: 250, fit: BoxFit.fill),
               ),
-              Text(
+              const Text(
                 "Identifying Soil",
                 style: TextStyle(
                   fontFamily: "Rokkitt",

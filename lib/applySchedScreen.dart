@@ -34,7 +34,7 @@ class _applyScheduleState extends State<applySchedule> with SingleTickerProvider
               Center(
                 child: Lottie.asset("assets/animations/water_plant.json", height: 250, width: 250, fit: BoxFit.fill),
               ),
-              Text(
+              const Text(
                 "Applying Schedule",
                 style: TextStyle(
                   fontFamily: "Rokkitt",

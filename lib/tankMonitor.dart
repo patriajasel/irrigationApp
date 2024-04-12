@@ -8,7 +8,7 @@ class tankMonitor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10.0),
+      margin: const EdgeInsets.only(top: 10.0),
       child: Center(
         child: Card(
           elevation: 10,
@@ -17,7 +17,7 @@ class tankMonitor extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Tank Monitoring',
@@ -38,12 +38,12 @@ class tankMonitor extends StatelessWidget {
                     border: Border.all(color: Colors.blue),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(8.0), 
+                    padding: const EdgeInsets.all(8.0), 
                     child: Container(
                       color: Colors.white70,
                       height: 200,
                       width: 270,
-                      child: MyBarChart(), 
+                      child: const MyBarChart(), 
                     ),
                   ),
                 ),
@@ -68,7 +68,7 @@ class MyBarChart extends StatelessWidget {
         titlesData: titlesData,
         borderData: borderData,
         barGroups: barGroups,
-        gridData: FlGridData(show: true),
+        gridData: const FlGridData(show: true),
         alignment: BarChartAlignment.spaceAround,
         maxY: 120
       ),
@@ -97,7 +97,7 @@ BarTouchData get barTouchData => BarTouchData(
 );
 
 Widget getTitles(double value, TitleMeta meta){
-  final style = TextStyle(
+  const style = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 14,
   );
@@ -120,7 +120,7 @@ Widget getTitles(double value, TitleMeta meta){
   );
 }
 
-FlTitlesData get titlesData => FlTitlesData(
+FlTitlesData get titlesData => const FlTitlesData(
   show: true,
   bottomTitles: AxisTitles(
     sideTitles: SideTitles(
@@ -144,7 +144,7 @@ FlBorderData get borderData => FlBorderData(
   show: false,
 );
 
-LinearGradient get _barsGradiant => LinearGradient(
+LinearGradient get _barsGradiant => const LinearGradient(
   colors: [
     Colors.redAccent,
     Colors.blueAccent,

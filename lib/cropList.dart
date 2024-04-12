@@ -19,8 +19,8 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20.0),
                     child: Text(
                       "LOAM",
                       style: TextStyle(
@@ -38,7 +38,7 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Soil Type",
                     style: TextStyle(
                       fontFamily: "Rokkitt",
@@ -54,13 +54,13 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                       ],
                     ),
                   ),
-                  Divider(
+                  const Divider(
                     thickness: 2.0,
                     color: Colors.white,
                   ),
                   Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text(
                         "Suggested Crop List",
                         style: TextStyle(
@@ -80,7 +80,7 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                       ),
                     ),
                   ),
-                  SizedBox(height: 10), // Add some space between text and list
+                  const SizedBox(height: 10), // Add some space between text and list
                   Expanded(
                     child: ListView.builder(
                       itemCount: 5, // Example: 5 cards
@@ -98,16 +98,16 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                           )),
                           child: Card(
                             elevation: 5,
-                            margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
-                              side: BorderSide(color: Colors.cyan, width: 2.0),
+                              side: const BorderSide(color: Colors.cyan, width: 2.0),
                             ),
                             child: ListTile(
-                              leading: Icon(Icons.local_florist),
+                              leading: const Icon(Icons.local_florist),
                               title: Text(
                                 'Crop $index',
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontFamily: "Rokkitt",
                                   shadows: [
                                     Shadow(
@@ -118,7 +118,7 @@ class _cropListViewState extends State<cropListView> with TickerProviderStateMix
                                   ],
                                 ),
                               ),
-                              subtitle: Text(
+                              subtitle: const Text(
                                 'Click to view the schedule',
                                 style: TextStyle(
                                   fontFamily: "Rokkitt",

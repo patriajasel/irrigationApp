@@ -11,12 +11,12 @@ class nodesListView extends StatelessWidget {
         Card(
           elevation: 10,
           color: Colors.blue,
-          margin: EdgeInsets.all(8.0),
+          margin: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Node Monitoring',
                   style: TextStyle(
@@ -40,12 +40,12 @@ class nodesListView extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
                               15.0), // Rounded corners for the card
-                          side: BorderSide(
+                          side: const BorderSide(
                               color: Colors.cyan,
                               width: 2), // Border color and width
                         ),
                         child: ListTile(
-                          title: Text(
+                          title: const Text(
                             "Plant: Tomato",
                             style: TextStyle(
                               fontFamily: "Rokkitt",
@@ -53,7 +53,7 @@ class nodesListView extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text(
+                          subtitle: const Text(
                             "Node Number: 1",
                             style: TextStyle(
                               fontFamily: "Rokkitt",

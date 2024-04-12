@@ -8,7 +8,7 @@ class bottomNavBar extends StatelessWidget {
     return BottomAppBar(
       height: 70,
       color: Colors.blue,
-      shape: CircularNotchedRectangle(),
+      shape: const CircularNotchedRectangle(),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
@@ -18,8 +18,8 @@ class bottomNavBar extends StatelessWidget {
               // Handle 'Set Schedule' tap
               Navigator.pushNamed(context, '/manualSched');
             },
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10.0),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 10.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -43,8 +43,8 @@ class bottomNavBar extends StatelessWidget {
               // Handle 'Check Schedule' tap
               Navigator.pushNamed(context, '/checkSched');
             },
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20.0),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
